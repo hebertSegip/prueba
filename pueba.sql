@@ -7,9 +7,10 @@ RETURNS TABLE (
 $body$
 DECLARE
   v_fecha TIMESTAMP ;
+  v_nombre TIMESTAMP ;
 BEGIN
-  select NOW() INTO v_fecha;
-  RETURN query select v_fecha,'prueba';
+  select NOW(), 'prueba' INTO v_fecha;
+  RETURN query select v_fecha,v_nombre;
 END;
 $body$
 LANGUAGE 'plpgsql'
